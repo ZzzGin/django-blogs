@@ -30,7 +30,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    requires = [
+    install_requires = [
         'django-tinymce',
         'BeautifulSoup',
     ],

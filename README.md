@@ -1,4 +1,4 @@
-django-blog
+django-blogs
 ===========
 
 a django app for personal blog.
