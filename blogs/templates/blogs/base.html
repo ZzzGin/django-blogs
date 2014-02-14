@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="82c371debed0f1190181d3d733d725d3"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block ext_head %}
+    <title>易先生的世界</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% endblock %}
+  </head>
+{% endblock %}
+
+  <body>
+{% block navbar %}
+    {% include "blogs/nav.html" with active_nav="home" %}
+{% endblock %}
+
+{% block container %}
+    <div class="container-fluid">
+      {% block content %}
+      <div class="row-fluid">
+        <div class="span3">
+        {% block sidebar %}
+        {% include "blogs/sidebar.html" %}
+        {% endblock %}
+        </div><!--/span-->
+        <div class="span9">
+        {% block main_content %}
+        {% endblock %}
+        </div><!--/span-->
+      </div><!--/row-->
+      {% endblock %}
+      {% block footer %}
+      <hr>
+      <footer>
+        <p>&copy; yijingping 2013</p>
+      </footer>
+      {% endblock %}
+    </div><!--/.fluid-container-->
+{% endblock %}
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+{% block js_later %}
+    <script src="/static/jquery-latest.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+{% endblock %}
+  </body>
+</html>

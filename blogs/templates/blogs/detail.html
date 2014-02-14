@@ -1,0 +1,67 @@
+{% extends "blogs/base.html" %}
+{% block ext_head %}
+    <title>易先生的世界——{{blog.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .category {
+        background-color: #f5f2f2;
+      }
+      .tags {
+        background-color: #f5f2f2;
+      }
+    </style>
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+{% endblock %}
+
+
+{% block main_content %}
+<div class="detail">
+  <div class="title"><h2>{{blog.title}}<h2></div>
+  <div class="category">目录:<a href="{{blog.category.list_url}}">{{blog.category.name}}</a></div>
+  <div class="tags">标签:{% for item in blog.tags.all %} <span><a href={{item.list_url}}>{{item.name}}</a></span> {% endfor %}</div>
+  <div class="content">{{blog.content|safe}}</div>
+  <div class="">
+  <!-- UY BEGIN -->
+  <div id="uyan_frame"></div>
+  <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1735638" async=""></script>
+  <!-- UY END -->
+  </div>
+<div>
+{% endblock %}
+
+{% block js_later %}
+{{ block.supper }}
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=5&amp;mini=1&amp;pos=right&amp;uid=6581667" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+//在这里定义bds_config
+  var bds_config = {'bdText':'{{blog.title}} ——{{blog.brief}}'};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+{% endblock %}
