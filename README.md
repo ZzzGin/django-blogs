@@ -37,4 +37,4 @@ Quick start
 * Start the development server and visit http://127.0.0.1:8000/admin/
    to create a blog (you'll need the Admin app enabled).
 
-* Visit http://127.0.0.1:8000/ or /http://127.0.0.1:8000/blogs/ to view your blog home page.
+* Visit http://127.0.0.1:8000/ or http://127.0.0.1:8000/blogs/ to view your blog home page.
