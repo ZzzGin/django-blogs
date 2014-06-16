@@ -32,7 +32,7 @@ Quick start
     url(r'^blogs/', include('blogs.urls')),  # or route to blogs with 'blogs/' prefix 
     ```
 
-* Run `python manage.py migrate` to create the blogs models.
+* Run `python manage.py syncdb` to create the blogs models.
 
 * Start the development server and visit http://127.0.0.1:8000/admin/
    to create a blog (you'll need the Admin app enabled).
