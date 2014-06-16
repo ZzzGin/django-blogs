@@ -28,7 +28,7 @@ Quick start
 
     ```python
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^/', include('blogs.urls')),  # route to blogs by default
+    url(r'^$', include('blogs.urls')),  # route to blogs by default
     url(r'^blogs/', include('blogs.urls')),  # or route to blogs with 'blogs/' prefix 
     ```
 
